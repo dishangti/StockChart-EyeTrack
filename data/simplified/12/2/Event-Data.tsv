@@ -1,0 +1,268 @@
+System Properties:
+Operating System:	 Microsoft Windows NT 6.2.9200.0
+System User Name:	 gaozh
+Machine Name:	 DESKTOP-D1BOOAD
+
+Data properties:
+
+Recording name:	 HMH
+Recording date:	 2019/11/13
+Recording time:	 11:16:26
+Recording resolution:	 1280 x 1024
+
+Export date:	 2019/11/13
+Export time:	 11:26:15
+
+Participant:	 HMH
+Timestamp	Event	EventKey	Data1	Data2	Descriptor	
+0	ImageStart	8	0	0	5309_1.jpg	
+9980	ImageEnd	16	0	0	5309_1.jpg	
+10261	InstructionStart	2048	0	0	Instruction Element	
+11312	KeyPress	4	32	0	Space	
+11317	InstructionEnd	4096	0	0	Instruction Element	
+11403	ImageStart	8	0	0	2650_2.jpg	
+21354	ImageEnd	16	0	0	2650_2.jpg	
+21541	InstructionStart	2048	0	0	Instruction Element	
+22806	KeyPress	4	32	0	Space	
+22816	InstructionEnd	4096	0	0	Instruction Element	
+22885	ImageStart	8	0	0	2576_2.jpg	
+32848	ImageEnd	16	0	0	2576_2.jpg	
+33022	InstructionStart	2048	0	0	Instruction Element	
+34230	KeyPress	4	32	0	Space	
+34240	InstructionEnd	4096	0	0	Instruction Element	
+34317	ImageStart	8	0	0	5393_3.jpg	
+44275	ImageEnd	16	0	0	5393_3.jpg	
+44453	InstructionStart	2048	0	0	Instruction Element	
+45727	KeyPress	4	32	0	Space	
+45731	InstructionEnd	4096	0	0	Instruction Element	
+45803	ImageStart	8	0	0	2201_2.jpg	
+55769	ImageEnd	16	0	0	2201_2.jpg	
+55943	InstructionStart	2048	0	0	Instruction Element	
+57023	KeyPress	4	32	0	Space	
+57045	InstructionEnd	4096	0	0	Instruction Element	
+57139	ImageStart	8	0	0	2450_1.jpg	
+67080	ImageEnd	16	0	0	2450_1.jpg	
+67221	InstructionStart	2048	0	0	Instruction Element	
+68359	KeyPress	4	32	0	Space	
+68364	InstructionEnd	4096	0	0	Instruction Element	
+68469	ImageStart	8	0	0	2818_1.jpg	
+78393	ImageEnd	16	0	0	2818_1.jpg	
+78552	InstructionStart	2048	0	0	Instruction Element	
+80061	KeyPress	4	32	0	Space	
+80066	InstructionEnd	4096	0	0	Instruction Element	
+80158	ImageStart	8	0	0	2212_3.jpg	
+90102	ImageEnd	16	0	0	2212_3.jpg	
+90167	InstructionStart	2048	0	0	Instruction Element	
+91536	KeyPress	4	32	0	Space	
+91543	InstructionEnd	4096	0	0	Instruction Element	
+91631	ImageStart	8	0	0	3621_2.jpg	
+101586	ImageEnd	16	0	0	3621_2.jpg	
+101823	InstructionStart	2048	0	0	Instruction Element	
+102743	KeyPress	4	32	0	Space	
+102767	InstructionEnd	4096	0	0	Instruction Element	
+102861	ImageStart	8	0	0	3134_2.jpg	
+112810	ImageEnd	16	0	0	3134_2.jpg	
+112885	InstructionStart	2048	0	0	Instruction Element	
+113823	KeyPress	4	32	0	Space	
+113832	InstructionEnd	4096	0	0	Instruction Element	
+113882	ImageStart	8	0	0	2007_1.jpg	
+113950	KeyPress	4	32	0	Space	
+123862	ImageEnd	16	0	0	2007_1.jpg	
+123978	InstructionStart	2048	0	0	Instruction Element	
+125136	KeyPress	4	32	0	Space	
+125145	InstructionEnd	4096	0	0	Instruction Element	
+125236	ImageStart	8	0	0	3471_2.jpg	
+135178	ImageEnd	16	0	0	3471_2.jpg	
+135293	InstructionStart	2048	0	0	Instruction Element	
+136217	KeyPress	4	32	0	Space	
+136221	InstructionEnd	4096	0	0	Instruction Element	
+136262	ImageStart	8	0	0	1958_2.jpg	
+146245	ImageEnd	16	0	0	1958_2.jpg	
+146518	InstructionStart	2048	0	0	Instruction Element	
+147619	KeyPress	4	32	0	Space	
+147633	InstructionEnd	4096	0	0	Instruction Element	
+147711	ImageStart	8	0	0	3339_1.jpg	
+157688	ImageEnd	16	0	0	3339_1.jpg	
+157915	InstructionStart	2048	0	0	Instruction Element	
+158860	KeyPress	4	32	0	Space	
+158865	InstructionEnd	4096	0	0	Instruction Element	
+158935	ImageStart	8	0	0	2797_1.jpg	
+168899	ImageEnd	16	0	0	2797_1.jpg	
+169107	InstructionStart	2048	0	0	Instruction Element	
+170271	KeyPress	4	32	0	Space	
+170278	InstructionEnd	4096	0	0	Instruction Element	
+170370	ImageStart	8	0	0	3083_2.jpg	
+180321	ImageEnd	16	0	0	3083_2.jpg	
+180530	InstructionStart	2048	0	0	Instruction Element	
+181531	KeyPress	4	32	0	Space	
+181540	InstructionEnd	4096	0	0	Instruction Element	
+181629	ImageStart	8	0	0	2112_1.jpg	
+191572	ImageEnd	16	0	0	2112_1.jpg	
+191721	InstructionStart	2048	0	0	Instruction Element	
+192679	KeyPress	4	32	0	Space	
+192698	InstructionEnd	4096	0	0	Instruction Element	
+192786	ImageStart	8	0	0	1653_2.jpg	
+202741	ImageEnd	16	0	0	1653_2.jpg	
+203042	InstructionStart	2048	0	0	Instruction Element	
+204084	KeyPress	4	32	0	Space	
+204088	InstructionEnd	4096	0	0	Instruction Element	
+204181	ImageStart	8	0	0	3146_1.jpg	
+214132	ImageEnd	16	0	0	3146_1.jpg	
+214208	InstructionStart	2048	0	0	Instruction Element	
+215530	KeyPress	4	32	0	Space	
+215537	InstructionEnd	4096	0	0	Instruction Element	
+215626	ImageStart	8	0	0	3423_2.jpg	
+225565	ImageEnd	16	0	0	3423_2.jpg	
+225773	InstructionStart	2048	0	0	Instruction Element	
+227931	KeyPress	4	32	0	Space	
+227940	InstructionEnd	4096	0	0	Instruction Element	
+228089	ImageStart	8	0	0	3359_3.jpg	
+238042	ImageEnd	16	0	0	3359_3.jpg	
+238328	InstructionStart	2048	0	0	Instruction Element	
+239339	KeyPress	4	32	0	Space	
+239347	InstructionEnd	4096	0	0	Instruction Element	
+239445	ImageStart	8	0	0	3058_2.jpg	
+249378	ImageEnd	16	0	0	3058_2.jpg	
+249590	InstructionStart	2048	0	0	Instruction Element	
+250575	KeyPress	4	32	0	Space	
+250588	InstructionEnd	4096	0	0	Instruction Element	
+250671	ImageStart	8	0	0	3210_1.jpg	
+260633	ImageEnd	16	0	0	3210_1.jpg	
+260845	InstructionStart	2048	0	0	Instruction Element	
+261697	KeyPress	4	32	0	Space	
+261704	InstructionEnd	4096	0	0	Instruction Element	
+261775	ImageStart	8	0	0	3434_3.jpg	
+271729	ImageEnd	16	0	0	3434_3.jpg	
+271949	InstructionStart	2048	0	0	Instruction Element	
+272919	KeyPress	4	32	0	Space	
+272931	InstructionEnd	4096	0	0	Instruction Element	
+273019	ImageStart	8	0	0	5967_2.jpg	
+282959	ImageEnd	16	0	0	5967_2.jpg	
+283140	InstructionStart	2048	0	0	Instruction Element	
+284388	KeyPress	4	32	0	Space	
+284395	InstructionEnd	4096	0	0	Instruction Element	
+284462	ImageStart	8	0	0	6141_1.jpg	
+294428	ImageEnd	16	0	0	6141_1.jpg	
+294594	InstructionStart	2048	0	0	Instruction Element	
+295880	KeyPress	4	32	0	Space	
+295901	InstructionEnd	4096	0	0	Instruction Element	
+295988	ImageStart	8	0	0	3403_2.jpg	
+305942	ImageEnd	16	0	0	3403_2.jpg	
+306122	InstructionStart	2048	0	0	Instruction Element	
+307249	KeyPress	4	32	0	Space	
+307261	InstructionEnd	4096	0	0	Instruction Element	
+307341	ImageStart	8	0	0	1832_1.jpg	
+317291	ImageEnd	16	0	0	1832_1.jpg	
+317508	InstructionStart	2048	0	0	Instruction Element	
+318243	KeyPress	4	32	0	Space	
+318252	InstructionEnd	4096	0	0	Instruction Element	
+318325	ImageStart	8	0	0	2372_3.jpg	
+328279	ImageEnd	16	0	0	2372_3.jpg	
+328435	InstructionStart	2048	0	0	Instruction Element	
+329748	KeyPress	4	32	0	Space	
+329759	InstructionEnd	4096	0	0	Instruction Element	
+329854	ImageStart	8	0	0	3327_2.jpg	
+339800	ImageEnd	16	0	0	3327_2.jpg	
+339984	InstructionStart	2048	0	0	Instruction Element	
+342037	KeyPress	4	32	0	Space	
+342042	InstructionEnd	4096	0	0	Instruction Element	
+342102	ImageStart	8	0	0	2039_2.jpg	
+352065	ImageEnd	16	0	0	2039_2.jpg	
+352166	InstructionStart	2048	0	0	Instruction Element	
+355084	KeyPress	4	32	0	Space	
+355088	InstructionEnd	4096	0	0	Instruction Element	
+355163	ImageStart	8	0	0	1946_3.jpg	
+365141	ImageEnd	16	0	0	1946_3.jpg	
+365304	InstructionStart	2048	0	0	Instruction Element	
+366308	KeyPress	4	32	0	Space	
+366321	InstructionEnd	4096	0	0	Instruction Element	
+366404	ImageStart	8	0	0	2403_2.jpg	
+376370	ImageEnd	16	0	0	2403_2.jpg	
+376656	InstructionStart	2048	0	0	Instruction Element	
+377673	KeyPress	4	32	0	Space	
+377677	InstructionEnd	4096	0	0	Instruction Element	
+377753	ImageStart	8	0	0	1590_2.jpg	
+387716	ImageEnd	16	0	0	1590_2.jpg	
+387935	InstructionStart	2048	0	0	Instruction Element	
+389246	KeyPress	4	32	0	Space	
+389260	InstructionEnd	4096	0	0	Instruction Element	
+389333	ImageStart	8	0	0	1924_1.jpg	
+399301	ImageEnd	16	0	0	1924_1.jpg	
+399522	InstructionStart	2048	0	0	Instruction Element	
+401654	KeyPress	4	32	0	Space	
+401665	InstructionEnd	4096	0	0	Instruction Element	
+401740	ImageStart	8	0	0	2379_2.jpg	
+411690	ImageEnd	16	0	0	2379_2.jpg	
+411989	InstructionStart	2048	0	0	Instruction Element	
+413038	KeyPress	4	32	0	Space	
+413041	InstructionEnd	4096	0	0	Instruction Element	
+413119	ImageStart	8	0	0	3036_3.jpg	
+423065	ImageEnd	16	0	0	3036_3.jpg	
+423205	InstructionStart	2048	0	0	Instruction Element	
+424189	KeyPress	4	32	0	Space	
+424198	InstructionEnd	4096	0	0	Instruction Element	
+424279	ImageStart	8	0	0	2776_2.jpg	
+434242	ImageEnd	16	0	0	2776_2.jpg	
+434457	InstructionStart	2048	0	0	Instruction Element	
+435231	KeyPress	4	32	0	Space	
+435245	InstructionEnd	4096	0	0	Instruction Element	
+435319	ImageStart	8	0	0	2964_1.jpg	
+445289	ImageEnd	16	0	0	2964_1.jpg	
+445519	InstructionStart	2048	0	0	Instruction Element	
+446521	KeyPress	4	32	0	Space	
+446536	InstructionEnd	4096	0	0	Instruction Element	
+446605	ImageStart	8	0	0	2324_1.jpg	
+456573	ImageEnd	16	0	0	2324_1.jpg	
+456766	InstructionStart	2048	0	0	Instruction Element	
+457934	KeyPress	4	32	0	Space	
+457954	InstructionEnd	4096	0	0	Instruction Element	
+458059	ImageStart	8	0	0	3579_1.jpg	
+468013	ImageEnd	16	0	0	3579_1.jpg	
+468085	InstructionStart	2048	0	0	Instruction Element	
+470050	KeyPress	4	32	0	Space	
+470055	InstructionEnd	4096	0	0	Instruction Element	
+470140	ImageStart	8	0	0	5945_1.jpg	
+480103	ImageEnd	16	0	0	5945_1.jpg	
+480134	InstructionStart	2048	0	0	Instruction Element	
+481219	KeyPress	4	32	0	Space	
+481229	InstructionEnd	4096	0	0	Instruction Element	
+481310	ImageStart	8	0	0	2031_1.jpg	
+491269	ImageEnd	16	0	0	2031_1.jpg	
+491473	InstructionStart	2048	0	0	Instruction Element	
+492760	KeyPress	4	32	0	Space	
+492768	InstructionEnd	4096	0	0	Instruction Element	
+492855	ImageStart	8	0	0	3447_1.jpg	
+502810	ImageEnd	16	0	0	3447_1.jpg	
+503034	InstructionStart	2048	0	0	Instruction Element	
+504030	KeyPress	4	32	0	Space	
+504038	InstructionEnd	4096	0	0	Instruction Element	
+504098	ImageStart	8	0	0	2175_2.jpg	
+514064	ImageEnd	16	0	0	2175_2.jpg	
+514258	InstructionStart	2048	0	0	Instruction Element	
+515214	KeyPress	4	32	0	Space	
+515224	InstructionEnd	4096	0	0	Instruction Element	
+515293	ImageStart	8	0	0	3168_1.jpg	
+525254	ImageEnd	16	0	0	3168_1.jpg	
+525416	InstructionStart	2048	0	0	Instruction Element	
+526497	KeyPress	4	32	0	Space	
+526508	InstructionEnd	4096	0	0	Instruction Element	
+526582	ImageStart	8	0	0	2302_1.jpg	
+536544	ImageEnd	16	0	0	2302_1.jpg	
+536684	InstructionStart	2048	0	0	Instruction Element	
+537769	KeyPress	4	32	0	Space	
+537779	InstructionEnd	4096	0	0	Instruction Element	
+537862	ImageStart	8	0	0	3376_2.jpg	
+547820	ImageEnd	16	0	0	3376_2.jpg	
+547883	InstructionStart	2048	0	0	Instruction Element	
+549061	KeyPress	4	32	0	Space	
+549070	InstructionEnd	4096	0	0	Instruction Element	
+549139	ImageStart	8	0	0	3556_1.jpg	
+559097	ImageEnd	16	0	0	3556_1.jpg	
+559391	InstructionStart	2048	0	0	Instruction Element	
+560780	KeyPress	4	32	0	Space	
+560793	InstructionEnd	4096	0	0	Instruction Element	
+560870	ImageStart	8	0	0	2236_1.jpg	
+570839	ImageEnd	16	0	0	2236_1.jpg	
+570934	InstructionStart	2048	0	0	Instruction Element	
+571822	KeyPress	4	32	0	Space	
+571837	InstructionEnd	4096	0	0	Instruction Element	
