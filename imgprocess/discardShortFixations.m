@@ -1,4 +1,5 @@
 %extract fixation points and compose pseudo color chart
+%fixation points with time less than 100 ms are filtered out
 %change line 10
 clear;
 mmmm = 1;
@@ -10,8 +11,8 @@ shunxu=xlsread('E:\research\k_eyetracker\Eye movement_ data\dataset\shunxu.xlsx'
 xfix = struct('p1',[],'p2',[],'p3',[],'p4',[],'p5',[],'p6',[],'p7',[],'p8',[],'p9',[],'p10',[]);
 yfix = struct('p1',[],'p2',[],'p3',[],'p4',[],'p5',[],'p6',[],'p7',[],'p8',[],'p9',[],'p10',[]);
 q = struct('p1',ones(1,150),'p2',ones(1,150),'p3',ones(1,150),'p4',ones(1,150),'p5',ones(1,150),'p6',ones(1,150),'p7',ones(1,150),'p8',ones(1,150),'p9',ones(1,150),'p10',ones(1,150));
-for i=1:10%测试的人数序号
-    for j=1:3%每一个人测试有三轮实验数据
+for i=1:10%Person number
+    for j=1:3%Test number
     path=['E:\research\k_eyetracker\Eye movement_ data\experimental data\eye movement'  '\' num2str(i) '\' num2str(j) '\'];
     files = dir(path);
     eventdata = importdata([path 'Event-Data.tsv' ]);
@@ -30,7 +31,7 @@ for i=1:10%测试的人数序号
     %qu qujian lide zhi baocun
 
     for iii = 1:length(fixdata.data)
-    for ja = 1:50%每一轮实验是50张图
+    for ja = 1:50%picutre number
         %find the min value
         %if(fixdata.data(iii,2)>event((ja-1)*4+1)&&fixdata.data(iii,2)<event((ja-1)*4+2)&&fixdata.data(iii,3)>100)
         if i==1 
@@ -45,7 +46,7 @@ for i=1:10%测试的人数序号
                 xfix.p1((j-1)*50+ja,q.p1((j-1)*50+ja)) = fixdata.data(iii,4);
                 %记录y的坐标
                 yfix.p1((j-1)*50+ja,q.p1((j-1)*50+ja)) = fixdata.data(iii,5);
-                q.p1((j-1)*50+ja) = q.p1((j-1)*50+ja)+1;%q表示每一张图片看的点数多少
+                q.p1((j-1)*50+ja) = q.p1((j-1)*50+ja)+1;%q fixation point number
             end
         elseif i==2
                if(fixdata.data(iii,2)>event((ja-1)*4+1)&&fixdata.data(iii,2)<event((ja-1)*4+2))

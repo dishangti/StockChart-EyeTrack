@@ -11,7 +11,7 @@ min_pix = np.min(img)
 img.astype(np.float64)
 
 img = (img - min_pix) / (max_pix - min_pix) * 255
-img = 15*np.sqrt(img)
+img = 15*np.sqrt(img)   # Strenthen the difference
 
 img.astype(np.uint8)
 

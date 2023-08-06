@@ -6,19 +6,19 @@
 clc
 clear all
 order = xlsread('E:\research\k_eyetracker\Eye movement_ data\dataset\orderThirdStage.xlsx');
-%存放眼动数据的路径
+%eye movement data path
 PathASDFirst = 'E:\research\k_eyetracker\Eye movement_ data\experimental data\eyeMovementTwo';
-%存放刺激材料的路径
+%stimulus material path
 PathImage = 'E:\research\k_eyetracker\Eye movement_ data\dataset\thirdStage\datasetOne\';
-%存放实验结果的路径
+%output path
 PathFixPtsASD = 'E:\research\k_eyetracker\Eye movement_ data\dataHandleTwo\result\FixPts\';
 PathFixMapsASD = 'E:\research\k_eyetracker\Eye movement_ data\dataHandleTwo\result\FixMaps\';
 PathHeatMapsASD = 'E:\research\k_eyetracker\Eye movement_ data\dataHandleTwo\result\HeatMaps\';
-%存放图片名字的数组
+%picture name
 FilesNameOrder=[];
 X_ASD= struct('p1',[],'p2',[],'p3',[],'p4',[],'p5',[],'p6',[],'p7',[],'p8',[],'p9',[],'p10',[]);
 Y_ASD = struct('p1',[],'p2',[],'p3',[],'p4',[],'p5',[],'p6',[],'p7',[],'p8',[],'p9',[],'p10',[]);
-%获取该文件夹中所有png格式的图像
+%get all png images
 Files = dir(strcat(PathImage,'*.png'));
 %获取文件中所有图片的名称数字部分，并存放到FilesNameOrder数组
 for i = 1:length(Files)
@@ -101,7 +101,7 @@ for index= 1:150
     [ImgRow,ImgCol,~] = size(Img);
     FixationPoints = zeros(ImgRow,ImgCol);
     for j=1:size(xfix_all(index,:),2)
-        yy=max(min(floor((yfix_all(index,j))*2160),2160),1);
+        yy=max(min(floor((yfix_all(index,j))*2160),2160),1);                % Modify the resolution for other kinds of pics
         xx=max(min(floor((xfix_all(index,j))*3840),3840),1);
         FixationPoints(yy,xx)=1;
     end
