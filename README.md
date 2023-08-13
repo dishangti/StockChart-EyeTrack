@@ -3,6 +3,8 @@ Eye tracking data of professional and non-professional traders on stock charts a
 
 Eye trackers are Tobii T120 and Tobii Eye Tracker 5.
 
+[![DOI](https://zenodo.org/badge/672244145.svg)](https://zenodo.org/badge/latestdoi/672244145)
+
 ### Folder Description
 - `stimuli` contains stock chart materials.
 - `data` contains eye movement data from the eye trackers.
