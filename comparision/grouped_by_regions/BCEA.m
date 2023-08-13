@@ -92,7 +92,7 @@ fimplicit(@(x,y) L(1).*x.^2+L(2).*y.^2+L(3).*x.*y+L(4).*x+L(5).*y-1,[min(x) max(
 hold on
 %
 c = linspace(1,10,length(x));
-s = scatter(x,y,25,c,'fiiled');
+s = scatter(x,y,25,c,'filled');
 hold off
 %BCEA
 area =  find_ellipse_area([L(1) L(3) L(2) L(4) L(5) -1])

@@ -5,53 +5,53 @@ mm = ones(2,150);
 q = ones(1,150);
 clear dje finalexp;
 m =[1 1];
-shunxu=xlsread('E:\research\k_eyetracker\Eye movement_ data\dataset\shunxu.xlsx');
+shunxu=xlsread('G:\k_eyetracker\Eye movement_ data\dataset\shunxu.xlsx');
 xfix = [];
 yfix = [];
 
 %dicard fixations whose fixation time is smaller than 100ms
-filePath = 'E:\research\k_eyetracker\Eye movement_ data\experimental data\eye movement\3';
+filePath = 'G:\k_eyetracker\Eye movement_ data\experimental data\eye movement\1';
 for j=1:3%there are three rounds in ever trial
     path=[filePath '\' num2str(j) '\'];
     files = dir(path);
     eventdata = importdata([path 'Event-Data.tsv' ]);
     fixdata = importdata([path 'Fixation-Data.tsv']);
-    get the timestamp named "I" in Event-Data.tsv
+    %get the timestamp named "I" in Event-Data.tsv
     ii = 1;                                                                                                                                                                                  ;
     for k =14 : 263
         wz = strfind(eventdata{k},'I');
-        judge whether the wz is empty
+        %judge whether the wz is empty
         if isempty(wz)==1
             continue;
         end
         event(ii) = str2num(eventdata{k}(1:wz(1)-2));
         ii = ii+1;
     end
-    get the fixation coordinates corresponding to the evevt timestamp
+    %get the fixation coordinates corresponding to the evevt timestamp
     for iii = 1:length(fixdata.data)
-        there are 50 pictures in every round
+        %there are 50 pictures in every round
         for ja = 1:50
-            get the fixation coordinates betweent the event ImageStart to
-            ImageEnd and dicard the fixations whose fixation time is
-            smaller than 100ms
+            %get the fixation coordinates betweent the event ImageStart to
+            %ImageEnd and dicard the fixations whose fixation time is
+            %smaller than 100ms
             if(fixdata.data(iii,2)>event((ja-1)*4+1)&&fixdata.data(iii,2)<event((ja-1)*4+2)&&fixdata.data(iii,3)>100)
-                record the fixation time
+                %record the fixation time
                 finalexp((j-1)*50+ja,q((j-1)*50+ja)) = fixdata.data(iii,3);
-                record the x coordinate
+                %record the x coordinate
                 xfix((j-1)*50+ja,q((j-1)*50+ja)) = fixdata.data(iii,4);
-                record the y coordinate
+                %record the y coordinate
                 yfix((j-1)*50+ja,q((j-1)*50+ja)) = fixdata.data(iii,5);
-                record the fixation number in every picture
+                %record the fixation number in every picture
                 q((j-1)*50+ja) = q((j-1)*50+ja)+1;
             end
         end
     end
 end
 
-draw the f ixation track
+%draw the f ixation track
 
 for cnt=1:150
-    Img=imread(['E:\research\k_eyetracker\Eye movement_ data\dataset\png\1280x1024png\' num2str(shunxu(cnt)) '.png']);
+    Img=imread(['G:\k_eyetracker\Eye movement_ data\dataset\png\1280x1024png\' num2str(shunxu(cnt)) '.png']);
     %imshow(img);
     %FixationPoints = zeros(1024,1280);
     xfixRevised=[];
@@ -73,13 +73,14 @@ for cnt=1:150
         hold on;
         %         track = plot(xfixRevised,yfixRevised,'b>-');
         c = linspace(1,10,length(xfixRevised));
-        scatter(xfixRevised,yfixRevised,25,c,'fiiled');
+        scatter(xfixRevised,yfixRevised,25,c,'filled');
         %         imwrite(track,['E:\research\k_eyetracker\Eye movement_ data\experimental data\png\' num2str(shunxu(cnt)) '.png']);
         hold off;
         %         close(figure(cnt));
     end
 end
 
+%%
 
 %%calculate the ¦È and draw the PolarHistogram
 theta = [];

@@ -8,4 +8,4 @@ In each folder contains files with the same name.
 - `comparison` contains code for visional pattern comparison.
 
 ### Attention
-In comparison part, we used only 5 professionals instead of all the 10
+In comparison part, we used only 5 professionals instead of all the 10.

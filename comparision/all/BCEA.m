@@ -5,12 +5,12 @@ mm = ones(2,150);
 q = ones(1,150);
 clear dje finalexp;
 m =[1 1];
-shunxu=xlsread('E:\research\k_eyetracker\Eye movement_ data\dataset\shunxu.xlsx');
+shunxu=xlsread('G:\k_eyetracker\Eye movement_ data\dataset\shunxu.xlsx');
 xfix = [];
 yfix = [];
 
 %%dicard fixations whose fixation time is smaller than 100ms
-filePath = 'E:\research\k_eyetracker\Eye movement_ data\experimental data\eye movement\3';
+filePath = 'G:\k_eyetracker\Eye movement_ data\experimental data\eye movement\1';
 for j=1:3%there are three rounds in ever trial
     path=[filePath '\' num2str(j) '\'];
     files = dir(path);
@@ -51,7 +51,7 @@ end
 %%draw scatter diagram
 xfixRevised = [];
 yfixRevised = [];
-for  cntRow =1:150
+for  cntRow =1:50
     xCoor = [];
     yCoor = [];
     %%delete the x=0 && y=0 coordinates
@@ -89,7 +89,9 @@ fimplicit(@(x,y) L(1).*x.^2+L(2).*y.^2+L(3).*x.*y+L(4).*x+L(5).*y-1,[min(x) max(
 hold on
 %
 c = linspace(1,10,length(x));
-s = scatter(x,y,25,c,'fiiled');
+s = scatter(x,y,25,c,'filled');
+xlim([-1200 1200])
+ylim([-1200 1200])
 hold off
 %BCEA
 area =  find_ellipse_area([L(1) L(3) L(2) L(4) L(5) -1])
