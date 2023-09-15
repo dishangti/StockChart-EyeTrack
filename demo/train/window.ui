@@ -14,29 +14,29 @@
    <string>Stock Chart Viewing Training System</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGraphicsView" name="graphicsView_attention">
+   <widget class="QGraphicsView" name="graphicsView">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>50</y>
-      <width>1024</width>
-      <height>576</height>
+      <width>1026</width>
+      <height>578</height>
      </rect>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_evaluate">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>180</x>
       <y>630</y>
-      <width>171</width>
+      <width>161</width>
       <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Times New Roman</family>
-      <pointsize>20</pointsize>
+      <pointsize>18</pointsize>
      </font>
     </property>
     <property name="text">
@@ -46,7 +46,7 @@
    <widget class="QPushButton" name="pushButton_answer">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>440</x>
       <y>630</y>
       <width>161</width>
       <height>41</height>
@@ -55,7 +55,7 @@
     <property name="font">
      <font>
       <family>Times New Roman</family>
-      <pointsize>20</pointsize>
+      <pointsize>18</pointsize>
      </font>
     </property>
     <property name="text">
@@ -81,6 +81,25 @@
      <string>Visual Saliency Map</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_reset">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>630</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Reset</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
@@ -92,8 +111,8 @@
    <slot>evaluate()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>402</x>
-     <y>1568</y>
+     <x>262</x>
+     <y>670</y>
     </hint>
     <hint type="destinationlabel">
      <x>314</x>
@@ -108,8 +127,8 @@
    <slot>answer()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>896</x>
-     <y>1567</y>
+     <x>610</x>
+     <y>670</y>
     </hint>
     <hint type="destinationlabel">
      <x>1017</x>
@@ -117,9 +136,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_reset</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>795</x>
+     <y>647</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>921</x>
+     <y>653</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>evaluate()</slot>
   <slot>answer()</slot>
+  <slot>reset()</slot>
  </slots>
 </ui>
