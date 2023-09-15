@@ -47,11 +47,11 @@ class mainWin(QMainWindow, Ui_MainWindow):
         self.setWindowFlags(QtCore.Qt.WindowType.WindowCloseButtonHint | QtCore.Qt.WindowType.WindowMinimizeButtonHint)
 
         ### Show original image
-        self._showImage('./116_origin.png')
+        self.drawscene = self._showImage('./116_origin.png', True)
 
         self.isOrigin = True
     
-    def _showImage(self, imgPath):
+    def _showImage(self, imgPath, drawable):
         """
         Image should be scaled as 16:9
         """
@@ -62,25 +62,30 @@ class mainWin(QMainWindow, Ui_MainWindow):
         scaled = frame.scaled(graphicWidth, graphicHeight, QtCore.Qt.AspectRatioMode.IgnoreAspectRatio, QtCore.Qt.TransformationMode.SmoothTransformation)
         pix = QPixmap.fromImage(scaled)
         item = QGraphicsPixmapItem(pix)
-        scene  = DrawScene(graphicWidth,graphicHeight)
+        if drawable:
+            scene  = DrawScene(graphicWidth,graphicHeight)
+        else:
+            scene = QGraphicsScene()
+            scene.setSceneRect(0,0,graphicWidth,graphicHeight)
         scene.addItem(item)
         self.graphicsView.setScene(scene)
+        return scene
 
     def evaluate(self):
         pass
 
     def answer(self):
         if self.isOrigin:
-            self._showImage('./116_ans.png')
+            self._showImage('./116_ans.png', False)
             self.isOrigin = False
             self.pushButton_evaluate.setEnabled(False)
         else:
-            self._showImage('./116_origin')
+            self.graphicsView.setScene(self.drawscene)
             self.isOrigin = True
             self.pushButton_evaluate.setEnabled(True)
 
     def reset(self):
-        self._showImage('./116_origin')
+        self.drawscene = self._showImage('./116_origin')
         self.isOrigin = True
         self.pushButton_evaluate.setEnabled(True)
 
