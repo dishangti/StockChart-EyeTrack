@@ -1,4 +1,4 @@
-import typing
+import cv2
 from PyQt6.QtWidgets import QGraphicsSceneMouseEvent, QMainWindow, QMessageBox
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtGui import QImage, QPixmap
@@ -26,10 +26,10 @@ class DrawScene(QGraphicsScene):
             self.path2.moveTo(event.scenePos())
             pp1 = QPen()
             pp1.setColor(QtCore.Qt.GlobalColor.white)    # set a pen
-            pp1.setWidth(10)
+            pp1.setWidth(20)
             pp2 = QPen()
             pp2.setColor(QtCore.Qt.GlobalColor.white)
-            pp2.setWidth(10)
+            pp2.setWidth(20)
             self.QGraphicsPath1.setPen(pp1)
             self.QGraphicsPath2.setPen(pp2)
             self.addItem(self.QGraphicsPath1)
@@ -102,7 +102,7 @@ class mainWin(QMainWindow, Ui_MainWindow):
         self.graphicsView.setScene(scene)
         return scene
 
-    def evaluate(self):
+    def _saveDraw(self):
         self.drawscene.child.clearSelection()
         image = QImage(self.drawscene.child.sceneRect().size().toSize(), QImage.Format.Format_ARGB32)
         image.fill(QtCore.Qt.GlobalColor.black)
@@ -111,6 +111,41 @@ class mainWin(QMainWindow, Ui_MainWindow):
         self.drawscene.child.render(painter)
         image.save('./116_user.png')
         del painter
+
+    def _score(self, im1, im2, threshold):
+        total_cnt = 0
+        valid_cnt = 0
+        for i in range(im1.shape[0]):
+            for j in range(im1.shape[1]):
+                if im1[i][j] >= threshold:
+                    total_cnt += 1
+                    if im2[i][j] != 0:
+                        valid_cnt += 1
+        return valid_cnt, total_cnt
+
+    def evaluate(self):
+        self._saveDraw()
+
+        im1 = cv2.imread('./116_user.png',0)
+        im2 = cv2.imread('./116_std.png',0)
+        im2 = cv2.resize(im2, (im1.shape[1], im1.shape[0]), interpolation=cv2.INTER_AREA)
+
+        thresh = 100
+        score1 = self._score(im1,im2,threshold=thresh)
+        score2 = self._score(im2,im1,threshold=thresh)
+        print('Score1:',score1)
+        print('Score2:',score2)
+        if (score1[1] + score2[1]) == 0:
+            score = 0
+        else:
+            score = ((score1[0] + score2[0]) / (score1[1] + score2[1]))*100
+        print('Score:',score)
+
+        if score >= 10:
+            perf = 'You did a good job!'
+        else:
+            perf = 'Sorry, you seemed not to perform well.'
+        QMessageBox.information(self, perf, QMessageBox.StandardButton.Ok)
 
     def answer(self):
         if self.isOrigin:
