@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import QGraphicsSceneMouseEvent, QMainWindow, QMessageBox
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtGui import QImage, QPixmap
 from PyQt6.QtWidgets import QGraphicsPixmapItem, QGraphicsScene, QGraphicsPathItem
-from PyQt6.QtGui import QPainterPath, QPen, QPainter
+from PyQt6.QtGui import QPainterPath, QPen, QPainter, QColor
 from PyQt6 import QtCore
 from window import Ui_MainWindow
 import sys
@@ -24,8 +24,9 @@ class DrawScene(QGraphicsScene):
             self.path2 = QPainterPath()
             self.path1.moveTo(event.scenePos())         # path begin
             self.path2.moveTo(event.scenePos())
+            drawcolor = QColor(255, 255, 255, 160)
             pp1 = QPen()
-            pp1.setColor(QtCore.Qt.GlobalColor.white)    # set a pen
+            pp1.setColor(drawcolor)    # set a pen
             pp1.setWidth(20)
             pp2 = QPen()
             pp2.setColor(QtCore.Qt.GlobalColor.white)
@@ -65,7 +66,6 @@ class mainWin(QMainWindow, Ui_MainWindow):
 
         ### Show original image
         self.drawscene = self._showOrigin('./116_origin.png')
-
         self.isOrigin = True
 
     def _showOrigin(self, imgPath):
@@ -119,7 +119,7 @@ class mainWin(QMainWindow, Ui_MainWindow):
             for j in range(im1.shape[1]):
                 if im1[i][j] >= threshold:
                     total_cnt += 1
-                    if im2[i][j] != 0:
+                    if im2[i][j] >= threshold:
                         valid_cnt += 1
         return valid_cnt, total_cnt
 
@@ -141,26 +141,35 @@ class mainWin(QMainWindow, Ui_MainWindow):
             score = ((score1[0] + score2[0]) / (score1[1] + score2[1]))*100
         print('Score:',score)
 
-        if score >= 10:
-            perf = 'You did a good job!'
+        perf = f'Your score is {round(score, 2)}.\n'
+        if score >= 60:
+            perf += 'You did a good job!'
         else:
-            perf = 'Sorry, you seemed not to perform well.'
-        QMessageBox.information(self, perf, QMessageBox.StandardButton.Ok)
+            perf += 'Sorry, you seemed not to perform well.'
+        QMessageBox.information(self, 'Your Performance', perf, QMessageBox.StandardButton.Ok)
 
     def answer(self):
         if self.isOrigin:
             self._showImage('./116_ans.png')
             self.isOrigin = False
             self.pushButton_evaluate.setEnabled(False)
+            self.label.setText('Expert Attention Map')
         else:
             self.graphicsView.setScene(self.drawscene)
             self.isOrigin = True
             self.pushButton_evaluate.setEnabled(True)
+            self.label.setText('Your Attention Map')
 
     def reset(self):
         self.drawscene = self._showOrigin('./116_origin')
         self.isOrigin = True
         self.pushButton_evaluate.setEnabled(True)
+        self.label.setText('Your Attention Map')
+    
+    def helpinfo(self):
+        # Show help message
+        hlp = 'This is stock chart viewing training system.\nPaint the areas on the stock chart that you think should be focused on, and tap "Evaluate" to see your performance.\nTap "Answer" to see the expected result and "Reset" to clear your painting.'
+        QMessageBox.information(self, 'Instruction', hlp, QMessageBox.StandardButton.Ok)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

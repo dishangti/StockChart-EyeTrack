@@ -12,21 +12,21 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1047, 681)
+        MainWindow.resize(1047, 674)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.graphicsView = QtWidgets.QGraphicsView(parent=self.centralwidget)
         self.graphicsView.setGeometry(QtCore.QRect(10, 50, 1026, 578))
         self.graphicsView.setObjectName("graphicsView")
         self.pushButton_evaluate = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton_evaluate.setGeometry(QtCore.QRect(180, 630, 161, 41))
+        self.pushButton_evaluate.setGeometry(QtCore.QRect(120, 630, 161, 41))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(18)
         self.pushButton_evaluate.setFont(font)
         self.pushButton_evaluate.setObjectName("pushButton_evaluate")
         self.pushButton_answer = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton_answer.setGeometry(QtCore.QRect(440, 630, 161, 41))
+        self.pushButton_answer.setGeometry(QtCore.QRect(330, 630, 161, 41))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(18)
@@ -39,8 +39,15 @@ class Ui_MainWindow(object):
         font.setPointSize(20)
         self.label.setFont(font)
         self.label.setObjectName("label")
+        self.pushButton_reset = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButton_reset.setGeometry(QtCore.QRect(550, 630, 161, 41))
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(18)
+        self.pushButton_reset.setFont(font)
+        self.pushButton_reset.setObjectName("pushButton_reset")
         self.pushButton = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(700, 630, 161, 41))
+        self.pushButton.setGeometry(QtCore.QRect(770, 630, 161, 41))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(18)
@@ -51,7 +58,8 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         self.pushButton_evaluate.clicked.connect(MainWindow.evaluate) # type: ignore
         self.pushButton_answer.clicked.connect(MainWindow.answer) # type: ignore
-        self.pushButton.clicked.connect(MainWindow.reset) # type: ignore
+        self.pushButton_reset.clicked.connect(MainWindow.reset) # type: ignore
+        self.pushButton.clicked.connect(MainWindow.helpinfo) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -59,5 +67,6 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Stock Chart Viewing Training System"))
         self.pushButton_evaluate.setText(_translate("MainWindow", "Evaluate"))
         self.pushButton_answer.setText(_translate("MainWindow", "Answer"))
-        self.label.setText(_translate("MainWindow", "Visual Saliency Map"))
-        self.pushButton.setText(_translate("MainWindow", "Reset"))
+        self.label.setText(_translate("MainWindow", "Your Attention Map"))
+        self.pushButton_reset.setText(_translate("MainWindow", "Reset"))
+        self.pushButton.setText(_translate("MainWindow", "Help"))

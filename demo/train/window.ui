@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1047</width>
-    <height>681</height>
+    <height>674</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,7 +27,7 @@
    <widget class="QPushButton" name="pushButton_evaluate">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>120</x>
       <y>630</y>
       <width>161</width>
       <height>41</height>
@@ -46,7 +46,7 @@
    <widget class="QPushButton" name="pushButton_answer">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>330</x>
       <y>630</y>
       <width>161</width>
       <height>41</height>
@@ -78,13 +78,13 @@
      </font>
     </property>
     <property name="text">
-     <string>Visual Saliency Map</string>
+     <string>Your Attention Map</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_reset">
     <property name="geometry">
      <rect>
-      <x>700</x>
+      <x>550</x>
       <y>630</y>
       <width>161</width>
       <height>41</height>
@@ -98,6 +98,25 @@
     </property>
     <property name="text">
      <string>Reset</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>630</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Help</string>
     </property>
    </widget>
   </widget>
@@ -127,7 +146,7 @@
    <slot>answer()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>610</x>
+     <x>490</x>
      <y>670</y>
     </hint>
     <hint type="destinationlabel">
@@ -143,7 +162,7 @@
    <slot>reset()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>795</x>
+     <x>645</x>
      <y>647</y>
     </hint>
     <hint type="destinationlabel">
@@ -152,10 +171,27 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>helpinfo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>893</x>
+     <y>638</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>986</x>
+     <y>637</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>evaluate()</slot>
   <slot>answer()</slot>
   <slot>reset()</slot>
+  <slot>helpinfo()</slot>
  </slots>
 </ui>
