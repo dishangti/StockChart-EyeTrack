@@ -111,17 +111,11 @@ class mainWin(QMainWindow, Ui_MainWindow):
         self.drawscene.child.render(painter)
         image.save('./116_user.png')
         del painter
-
+    
     def _score(self, im1, im2, threshold):
-        total_cnt = 0
-        valid_cnt = 0
-        for i in range(im1.shape[0]):
-            for j in range(im1.shape[1]):
-                if im1[i][j] >= threshold:
-                    total_cnt += 1
-                    if im2[i][j] >= threshold:
-                        valid_cnt += 1
-        return valid_cnt, total_cnt
+        total_cnt = (im1 >= threshold).sum()
+        valid_cnd = ((im1 >= threshold) & (im2 >= threshold)).sum()
+        return valid_cnd, total_cnt
 
     def evaluate(self):
         self._saveDraw()
