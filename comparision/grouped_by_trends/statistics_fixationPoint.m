@@ -10,7 +10,7 @@ m =[1 1];
 q = struct('p1',ones(1,150),'p2',ones(1,150),'p3',ones(1,150),'p4',ones(1,150),'p5',ones(1,150),'p6',ones(1,150),'p7',ones(1,150),'p8',ones(1,150),'p9',ones(1,150),'p10',ones(1,150),'p11',ones(1,150),'p12',ones(1,150),'p13',ones(1,150),'p14',ones(1,150),'p15',ones(1,150));
 for i=1:15%测试的人数序号,前1-10为专家  11-15为非专家
     for j=1:3%每一个人测试有三轮实验数据
-        path=['E:\research\k_eyetracker\Eye movement_ data\experimental data\eye movement'  '\' num2str(i) '\' num2str(j) '\'];
+        path=['../../data/simplified'  '/' num2str(i) '/' num2str(j) '/'];
         files = dir(path);
         eventdata = importdata([path 'Event-Data.tsv' ]);
         fixdata = importdata([path 'Fixation-Data.tsv']);
@@ -198,7 +198,8 @@ for i=1:15%测试的人数序号,前1-10为专家  11-15为非专家
 end
 %跌  shunxu=xlsread('E:\research\k_eyetracker\Eye movement_ data\dataset\upDownOrder\downOrder.xlsx');
 %涨  shunxu=xlsread('E:\research\k_eyetracker\Eye movement_ data\dataset\upDownOrder\upOrder.xlsx');
-shunxu=xlsread('E:\research\k_eyetracker\Eye movement_ data\dataset\upDownOrder\upOrder.xlsx');
+% 'upOrder.xlsx' is for upward trend and 'downOrder.xlsx' is for downward trend
+shunxu=xlsread('../../data/order/upOrder.xlsx');
 %%restart
 qHandle = struct('p1',ones(1,length(shunxu)),'p2',ones(1,length(shunxu)),'p3',ones(1,length(shunxu)),'p4',ones(1,length(shunxu)),'p5',ones(1,length(shunxu)),'p6',ones(1,length(shunxu)),'p7',ones(1,length(shunxu)),'p8',ones(1,length(shunxu)),'p9',ones(1,length(shunxu)),'p10',ones(1,length(shunxu)),'p11',ones(1,length(shunxu)),'p12',ones(1,length(shunxu)),'p13',ones(1,length(shunxu)),'p14',ones(1,length(shunxu)),'p15',ones(1,length(shunxu)));
 

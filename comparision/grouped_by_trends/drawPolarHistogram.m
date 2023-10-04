@@ -5,12 +5,12 @@ mm = ones(2,150);
 q = ones(1,150);
 clear dje finalexp;
 m =[1 1];
-shunxu=xlsread('E:\research\k_eyetracker\Eye movement_ data\dataset\shunxu.xlsx');
+shunxu=xlsread('../../data/order/shunxu.xlsx');
 xfixAll = [];
 yfixAll = [];
 
 %%dicard fixations whose fixation time is smaller than 100ms
-filePath = 'E:\research\k_eyetracker\Eye movement_ data\experimental data\eye movement\15';
+filePath = '../../data/simplified/1';
 for j=1:3%there are three rounds in ever trial
     path=[filePath '\' num2str(j) '\'];
     files = dir(path);
@@ -77,7 +77,8 @@ end
 %
 % end
 %% filter the demanding data from excel
-upDownOrder=xlsread('E:\research\k_eyetracker\Eye movement_ data\dataset\upDownOrder\downOrder.xlsx');
+% 'upOrder.xlsx' is for upward trend and 'downOrder.xlsx' is for downward trend
+upDownOrder=xlsread('../../data/order/downOrder.xlsx');
 lenOrder = length(upDownOrder);
 for order = 1:lenOrder
     xfix(order,:) = xfixAll(upDownOrder(order),:);

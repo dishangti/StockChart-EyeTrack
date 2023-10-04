@@ -5,12 +5,12 @@ mm = ones(2,150);
 q = ones(1,150);
 clear dje finalexp;
 m =[1 1];
-shunxu=xlsread('E:\research\k_eyetracker\Eye movement_ data\dataset\shunxu.xlsx');
+shunxu=xlsread('../../data/order/showOrder.xlsx');
 xfix = [];
 yfix = [];
 
 %%dicard fixations whose fixation time is smaller than 100ms
-filePath = 'E:\research\k_eyetracker\Eye movement_ data\experimental data\eye movement\15';
+filePath = '../../data/simplified/1';
 for j=1:3%there are three rounds in ever trial
     path=[filePath '\' num2str(j) '\'];
     files = dir(path);
@@ -34,6 +34,8 @@ for j=1:3%there are three rounds in ever trial
             %get the fixation coordinates betweent the event ImageStart to
             %ImageEnd and dicard the fixations whose fixation time is
             %smaller than 100ms
+            % 660 is the region dividing line, where '> 660' is for volume
+            % and '< 660 is for candlestick
             if(fixdata.data(iii,2)>event((ja-1)*4+1)&&fixdata.data(iii,2)<event((ja-1)*4+2)&&fixdata.data(iii,3)>100&fixdata.data(iii,5)>660)
                 %record the fixation time
                 finalexp((j-1)*50+ja,q((j-1)*50+ja)) = fixdata.data(iii,3);

@@ -5,13 +5,13 @@ mm = ones(2,150);
 q = ones(1,150);
 clear dje finalexp;
 m =[1 1];
-shunxu=xlsread('E:\research\k_eyetracker\Eye movement_ data\dataset\shunxu.xlsx');
+shunxu=xlsread('../../data/order/showOrder.xlsx');
 xfix = struct('p1',[],'p2',[],'p3',[],'p4',[],'p5',[],'p6',[],'p7',[],'p8',[],'p9',[],'p10',[],'p11',[],'p12',[],'p13',[],'p14',[],'p15',[]);
 yfix = struct('p1',[],'p2',[],'p3',[],'p4',[],'p5',[],'p6',[],'p7',[],'p8',[],'p9',[],'p10',[],'p11',[],'p12',[],'p13',[],'p14',[],'p15',[]);
 q = struct('p1',ones(1,150),'p2',ones(1,150),'p3',ones(1,150),'p4',ones(1,150),'p5',ones(1,150),'p6',ones(1,150),'p7',ones(1,150),'p8',ones(1,150),'p9',ones(1,150),'p10',ones(1,150),'p11',ones(1,150),'p12',ones(1,150),'p13',ones(1,150),'p14',ones(1,150),'p15',ones(1,150));
 for i=1:15%测试的人数序号,前1-10为专家  11-15为非专家
     for j=1:3%每一个人测试有三轮实验数据
-        path=['E:\research\k_eyetracker\Eye movement_ data\experimental data\eye movement'  '\' num2str(i) '\' num2str(j) '\'];
+        path=['../../data/simplified'  '/' num2str(i) '/' num2str(j) '/'];
         files = dir(path);
         eventdata = importdata([path 'Event-Data.tsv' ]);
         fixdata = importdata([path 'Fixation-Data.tsv']);
@@ -30,6 +30,8 @@ for i=1:15%测试的人数序号,前1-10为专家  11-15为非专家
         
         for iii = 1:length(fixdata.data)
             for ja = 1:50%每一轮实验是50张图
+            % 660 is the region dividing line, where '> 660' is for volume
+            % and '< 660 is for candlestick
                 if i==1
                     if(fixdata.data(iii,2)>event((ja-1)*4+1)&&fixdata.data(iii,2)<event((ja-1)*4+2)&&fixdata.data(iii,3)>100&&fixdata.data(iii,5)>660)
                         %取到的是event中的ImageStart-ImageEnd 里的数据

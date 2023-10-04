@@ -5,14 +5,14 @@ mm = ones(2,150);
 q = ones(1,150);
 clear dje finalexp;
 m =[1 1];
-shunxu=xlsread('G:\k_eyetracker\Eye movement_ data\dataset\shunxu.xlsx');
+shunxu=xlsread('../../data/order/showOrder.xlsx');
 xfix = [];
 yfix = [];
 
 %dicard fixations whose fixation time is smaller than 100ms
-filePath = 'G:\k_eyetracker\Eye movement_ data\experimental data\eye movement\1';
+filePath = '../../data/simplified/1';
 for j=1:3%there are three rounds in ever trial
-    path=[filePath '\' num2str(j) '\'];
+    path=[filePath '/' num2str(j) '/'];
     files = dir(path);
     eventdata = importdata([path 'Event-Data.tsv' ]);
     fixdata = importdata([path 'Fixation-Data.tsv']);
@@ -51,7 +51,7 @@ end
 %draw the f ixation track
 
 for cnt=1:150
-    Img=imread(['G:\k_eyetracker\Eye movement_ data\dataset\png\1280x1024png\' num2str(shunxu(cnt)) '.png']);
+    Img=imread(['../../stimuli/simplified_1280x1024/' num2str(shunxu(cnt)) '.png']);
     %imshow(img);
     %FixationPoints = zeros(1024,1280);
     xfixRevised=[];
@@ -115,6 +115,8 @@ for cntRow =1:150
     theta = [theta thetaTemp];
     %%draw theta polar histogram
     %%reference to https://ww2.mathworks.cn/help/matlab/ref/polarhistogram.html
+
+    figure(151)
     p = polarhistogram(theta,24);
     %     title('Polarhistogram');
     p.FaceColor = [0 0 0];

@@ -5,14 +5,14 @@ mm = ones(2,150);
 q = ones(1,150);
 clear dje finalexp;
 m =[1 1];
-shunxu=xlsread('G:\k_eyetracker\Eye movement_ data\dataset\shunxu.xlsx');
+shunxu=xlsread('../../data/order/showOrder.xlsx');
 xfix = [];
 yfix = [];
 
 %%dicard fixations whose fixation time is smaller than 100ms
-filePath = 'G:\k_eyetracker\Eye movement_ data\experimental data\eye movement\1';
+filePath = '../../data/simplified/1';     % Change the participant NO. here
 for j=1:3%there are three rounds in ever trial
-    path=[filePath '\' num2str(j) '\'];
+    path=[filePath '/' num2str(j) '/'];
     files = dir(path);
     eventdata = importdata([path 'Event-Data.tsv' ]);
     fixdata = importdata([path 'Fixation-Data.tsv']);
