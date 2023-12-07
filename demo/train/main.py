@@ -64,9 +64,13 @@ class mainWin(QMainWindow, Ui_MainWindow):
         self.setFixedSize(self.width(), self.height())  # Fix window size
         self.setWindowFlags(QtCore.Qt.WindowType.WindowCloseButtonHint | QtCore.Qt.WindowType.WindowMinimizeButtonHint)
 
+        self.order2file = ['13', '20', '40', '56', '71', '116', '98', '43']
+        self.order = 0
+
         ### Show original image
-        self.drawscene = self._showOrigin('./116_origin.png')
+        self.drawscene = self._showOrigin('./assets/'+self.order2file[self.order] + '_origin.png')
         self.isOrigin = True
+        self._setLabel('Your Attention Map')
 
     def _showOrigin(self, imgPath):
         """
@@ -109,7 +113,7 @@ class mainWin(QMainWindow, Ui_MainWindow):
 
         painter = QPainter(image)
         self.drawscene.child.render(painter)
-        image.save('./116_user.png')
+        image.save('./records/'+self.order2file[self.order] + '_user.png')
         del painter
     
     def _score(self, im1, im2, threshold):
@@ -117,48 +121,73 @@ class mainWin(QMainWindow, Ui_MainWindow):
         valid_cnd = ((im1 >= threshold) & (im2 >= threshold)).sum()
         return valid_cnd, total_cnt
 
+    def _setLabel(self, text):
+        self.label.setText(f'{text} ({self.order+1})')
+
     def evaluate(self):
         self._saveDraw()
 
-        im1 = cv2.imread('./116_user.png',0)
-        im2 = cv2.imread('./116_std.png',0)
+        im1 = cv2.imread('./records/'+self.order2file[self.order] + '_user.png',0)
+        im2 = cv2.imread('./assets/'+self.order2file[self.order] + '_std.png',0)
         im2 = cv2.resize(im2, (im1.shape[1], im1.shape[0]), interpolation=cv2.INTER_AREA)
 
         thresh = 100
         score1 = self._score(im1,im2,threshold=thresh)
+        precision = score1[0] / score1[1]
         score2 = self._score(im2,im1,threshold=thresh)
-        print('Score1:',score1)
-        print('Score2:',score2)
-        if (score1[1] + score2[1]) == 0:
+        recall = score2[0] / score2[1]
+        print('Precision:',score1, precision)
+        print('Recall:',score2, recall)
+        if (precision + recall) == 0:
             score = 0
         else:
-            score = ((score1[0] + score2[0]) / (score1[1] + score2[1]))*100
-        print('Score:',score)
+            score = 200 * precision * recall / (precision + recall)
+        print('F1:',score)
 
         perf = f'Your score is {round(score, 2)}.\n'
         if score >= 60:
             perf += 'You did a good job!'
         else:
             perf += 'Sorry, you seemed not to perform well.'
-        QMessageBox.information(self, 'Your Performance', perf, QMessageBox.StandardButton.Ok)
+        #QMessageBox.information(self, 'Your Performance', perf, QMessageBox.StandardButton.Ok)
+        QMessageBox.information(self, '', 'Your evaluation has been saved!', QMessageBox.StandardButton.Ok)
+        with open('./records/'+self.order2file[self.order] + '_score.txt', 'w') as f:
+            f.write(f'{precision} {recall} {score}')
 
     def answer(self):
+        if self.order >= 5:
+            QMessageBox.information(self, 'No Answer', "This chart has no answer!", QMessageBox.StandardButton.Ok)
+            return
         if self.isOrigin:
-            self._showImage('./116_ans.png')
+            self._showImage('./assets/'+self.order2file[self.order] + '_ans.png')
             self.isOrigin = False
             self.pushButton_evaluate.setEnabled(False)
-            self.label.setText('Expert Attention Map')
+            self._setLabel('Expert Attention Map')
         else:
             self.graphicsView.setScene(self.drawscene)
             self.isOrigin = True
             self.pushButton_evaluate.setEnabled(True)
-            self.label.setText('Your Attention Map')
+            self._setLabel('Your Attention Map')
 
-    def reset(self):
-        self.drawscene = self._showOrigin('./116_origin')
+    def next(self):
+        self.order = (self.order + 1) % len(self.order2file)
+        self.drawscene = self._showOrigin('./assets/'+self.order2file[self.order] + '_origin.png')
         self.isOrigin = True
         self.pushButton_evaluate.setEnabled(True)
-        self.label.setText('Your Attention Map')
+        self._setLabel('Your Attention Map')
+
+    def last(self):
+        self.order = (self.order - 1) % len(self.order2file)
+        self.drawscene = self._showOrigin('./assets/'+self.order2file[self.order] + '_origin.png')
+        self.isOrigin = True
+        self.pushButton_evaluate.setEnabled(True)
+        self._setLabel('Your Attention Map')
+
+    def reset(self):
+        self.drawscene = self._showOrigin('./assets/'+self.order2file[self.order] + '_origin.png')
+        self.isOrigin = True
+        self.pushButton_evaluate.setEnabled(True)
+        self._setLabel('Your Attention Map')
     
     def helpinfo(self):
         # Show help message

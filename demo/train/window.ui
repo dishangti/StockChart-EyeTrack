@@ -27,7 +27,7 @@
    <widget class="QPushButton" name="pushButton_evaluate">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>12</x>
       <y>630</y>
       <width>161</width>
       <height>41</height>
@@ -46,7 +46,7 @@
    <widget class="QPushButton" name="pushButton_answer">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>172</x>
       <y>630</y>
       <width>161</width>
       <height>41</height>
@@ -65,9 +65,9 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>390</x>
       <y>10</y>
-      <width>241</width>
+      <width>281</width>
       <height>31</height>
      </rect>
     </property>
@@ -78,13 +78,13 @@
      </font>
     </property>
     <property name="text">
-     <string>Your Attention Map</string>
+     <string>Your Attention Map (0)</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_reset">
     <property name="geometry">
      <rect>
-      <x>550</x>
+      <x>712</x>
       <y>630</y>
       <width>161</width>
       <height>41</height>
@@ -103,7 +103,7 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>770</x>
+      <x>872</x>
       <y>630</y>
       <width>161</width>
       <height>41</height>
@@ -119,6 +119,44 @@
      <string>Help</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_next">
+    <property name="geometry">
+     <rect>
+      <x>362</x>
+      <y>630</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Next</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_last">
+    <property name="geometry">
+     <rect>
+      <x>522</x>
+      <y>630</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Last</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
@@ -130,7 +168,7 @@
    <slot>evaluate()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>262</x>
+     <x>152</x>
      <y>670</y>
     </hint>
     <hint type="destinationlabel">
@@ -146,7 +184,7 @@
    <slot>answer()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>490</x>
+     <x>330</x>
      <y>670</y>
     </hint>
     <hint type="destinationlabel">
@@ -162,7 +200,7 @@
    <slot>reset()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>645</x>
+     <x>805</x>
      <y>647</y>
     </hint>
     <hint type="destinationlabel">
@@ -187,11 +225,45 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_next</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>next()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>389</x>
+     <y>654</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>644</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_last</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>last()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>642</x>
+     <y>663</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>695</x>
+     <y>640</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>evaluate()</slot>
   <slot>answer()</slot>
   <slot>reset()</slot>
   <slot>helpinfo()</slot>
+  <slot>last()</slot>
+  <slot>next()</slot>
  </slots>
 </ui>

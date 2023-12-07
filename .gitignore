@@ -184,3 +184,6 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+
+### User data
+/demo/train/records/
