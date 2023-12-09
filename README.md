@@ -11,7 +11,7 @@ Eye trackers are Tobii T120 and Tobii Eye Tracker 5.
 - `comparison` contains code for visional pattern comparison.
 - `prediction` contains models for visual saliency prediction.
 - `imgprocess` contains some codes for image processing.
-- `results` contains results maps of saliency prediction.
+- `results` contains results maps of saliency prediction and user performances of training demo.
 - `demo` contains a stock chart viewing guidance demo.
 
 ### Attention
