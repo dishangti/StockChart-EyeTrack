@@ -6,6 +6,7 @@ from PyQt6.QtWidgets import QGraphicsPixmapItem, QGraphicsScene, QGraphicsPathIt
 from PyQt6.QtGui import QPainterPath, QPen, QPainter, QColor
 from PyQt6 import QtCore
 from window import Ui_MainWindow
+from random import shuffle
 import sys
 
 class DrawScene(QGraphicsScene):
@@ -64,7 +65,12 @@ class mainWin(QMainWindow, Ui_MainWindow):
         self.setFixedSize(self.width(), self.height())  # Fix window size
         self.setWindowFlags(QtCore.Qt.WindowType.WindowCloseButtonHint | QtCore.Qt.WindowType.WindowMinimizeButtonHint)
 
-        self.order2file = ['13', '20', '40', '56', '71', '116', '98', '43']
+        self.trainset = ['13', '20', '40', '56', '71']
+        self.testset = ['116', '98', '43']
+        shuffle(self.trainset)
+        shuffle(self.testset)
+
+        self.order2file = self.trainset + self.testset
         self.order = 0
 
         ### Show original image
