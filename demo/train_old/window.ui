@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1047</width>
+    <height>674</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Stock Chart Viewing Training System</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>1026</width>
+      <height>578</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_evaluate">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>630</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Evaluate</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_answer">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>630</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Answer</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>10</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Your Attention Map</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_reset">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>630</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Reset</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>630</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Help</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_evaluate</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>evaluate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>262</x>
+     <y>670</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>314</x>
+     <y>1567</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_answer</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>answer()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>490</x>
+     <y>670</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1017</x>
+     <y>1557</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_reset</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>645</x>
+     <y>647</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>921</x>
+     <y>653</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>helpinfo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>893</x>
+     <y>638</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>986</x>
+     <y>637</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>evaluate()</slot>
+  <slot>answer()</slot>
+  <slot>reset()</slot>
+  <slot>helpinfo()</slot>
+ </slots>
+</ui>
